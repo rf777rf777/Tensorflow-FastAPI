@@ -59,9 +59,9 @@ def get_pred_label(prediction_probabilities):
 
 loaded_model = load_model('core/model/dogVision.h5')
 
-custom_predictions = loaded_model.predict(create_data_batches(['dog.jpg']), verbose=1)
-custom_pred_labels = get_pred_label(custom_predictions)
-
-print(custom_pred_labels)
+custom_predictions = loaded_model.predict(create_data_batches(['dog2.jpg', 'dog.jpg']), verbose=1)
+for i in custom_predictions:
+  custom_pred_labels = get_pred_label(i)
+  print(custom_pred_labels)
 
 
